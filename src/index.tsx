@@ -7,7 +7,6 @@ const App = () => {
 	const jsx = (
 		<StrictMode>
 			<div className={'App'}>
-				<h1>Hello World!</h1>
 				<Hero></Hero>
 			</div>
 		</StrictMode>
