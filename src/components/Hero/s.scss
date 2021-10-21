@@ -23,21 +23,21 @@
 				overflow: hidden;
 				.job-titles-wrapper {
 					height: 100%;
-					animation:  move 3s ease-in-out infinite alternate;
-@keyframes move {
-                        25% {
-                            transform: translateY(-50px);
+					animation: move 3s ease-in-out infinite alternate;
+					@keyframes move {
+						25% {
+							transform: translateY(-50px);
 						}
 						60% {
-                            transform: translateY(-100px);
+							transform: translateY(-100px);
 						}
 						75% {
-                            transform: translateY(-150px);
+							transform: translateY(-150px);
 						}
 						100% {
-                            transform: translateY(-150px);
+							transform: translateY(-150px);
 						}
-					} 
+					}
 					.job-title-text {
 						height: 50px;
 						font-size: 30px;
