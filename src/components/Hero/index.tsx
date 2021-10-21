@@ -14,6 +14,7 @@ const Hero = () => {
 							{/* <pre className='job-title-text'>UX Designer</pre> */}
 							<pre className='job-title-text'>UI Designer</pre>
 							<pre className='job-title-text'>Web Developer</pre>
+							<pre className='job-title-text'>🐛 Bug Squasher 😎</pre>
 						</div>
 					</div>
 				</article>
