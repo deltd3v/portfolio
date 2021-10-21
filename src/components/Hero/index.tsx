@@ -5,10 +5,13 @@ const Hero = () => {
 		<div className={'Hero'}>
 			<div className='left'>
 				<article className='left-wrapper'>
-					<h1 className='title'>
-						Hello World !! My name is <br />
-					</h1>
-					<h4 className='title-name'>Evans Chaba</h4>
+					<pre className='title'>
+					 name: <br />
+					</pre>
+                    <h4 className='title-name'>Evans Chaba</h4>
+					<pre className='title'>
+					 title: <br />
+					</pre>
 					<div className='job-titles'>
 						<div className='job-titles-wrapper'>
 							{/* <pre className='job-title-text'>UX Designer</pre> */}

@@ -10,8 +10,9 @@
 			padding: 50px;
 
 			.title {
-				font-size: 30px;
-				font-weight: 300;
+				font-size: 10px;
+				font-weight: bolder;
+                text-transform: uppercase;
 			}
 
 			.title-name {
@@ -23,7 +24,7 @@
 				overflow: hidden;
 				.job-titles-wrapper {
 					height: 100%;
-					animation: move 3s ease-in-out infinite alternate;
+					animation: move 2.5s ease-in-out infinite alternate;
 					@keyframes move {
 						25% {
 							transform: translateY(-50px);
