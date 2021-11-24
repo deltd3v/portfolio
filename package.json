@@ -1,58 +1,32 @@
 {
-	"name": "portfolio",
-	"version": "1.0.0",
-	"description": "This example is using Next.js + Storybook + CSS Modules(include scss).",
-	"main": "index.js",
+	"name": "todoz",
+	"private": true,
 	"scripts": {
 		"dev": "next dev",
+		"lint": "next lint",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-		"k": "kill-port --method tcp --port 3000,6006",
-		"start:dev": "npm run k && npm run k && concurrently 'npm run dev' 'npm run storybook'",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"storybook": "start-storybook -p 6006",
-		"format": "prettier --write '**/**/**/*.{md,mdx,js,jsx,json,ts,tsx,css,scss}'",
-		"build-storybook": "build-storybook"    
+		"update": "ncu -u && npm install",
+		"start:dev": "npm run k-ports && npm run dev",
+		"k-ports": "kill-port --port 3000 --method tcp,http,https",
+		"format": "npx prettier --write '**/**/**/*.{tsx,scss,json,md}'"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/deltd3v/portfolio.git"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/deltd3v/portfolio/issues"
-	},
-	"homepage": "https://github.com/deltd3v/portfolio#readme",
 	"dependencies": {
-		"next": "^12.0.2",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
+		"next": "12.0.4",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
 		"sass": "^1.43.4"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.16.0",
-		"@storybook/addon-actions": "^6.3.12",
-		"@storybook/addon-docs": "^6.4.0-beta.23",
-		"@storybook/addon-essentials": "^6.3.12",
-		"@storybook/addon-links": "^6.3.12",
-		"@storybook/preset-scss": "^1.0.3",
-		"@storybook/preset-typescript": "^3.0.0",
-		"@storybook/react": "^6.3.12",
-		"@types/node": "^16.11.6",
-		"@types/react": "^17.0.33",
-		"@types/react-dom": "^17.0.10",
-		"babel-loader": "^8.2.3",
-		"concurrently": "^6.3.0",
-		"css-loader": "^5.2.7",
-		"fork-ts-checker-webpack-plugin": "^6.4.0",
+		"eslint": "7",
+		"postcss": "^8.3.11",
 		"kill-port": "^1.6.1",
-		"react-docgen-typescript": "^2.1.1",
-		"sass-loader": "^10.1.1",
-		"style-loader": "^2.0.0",
-		"ts-loader": "^9.2.6",
-		"typescript": "^4.4.4"
+		"typescript": "4.5.2",
+		"@types/node": "16.11.9",
+		"tailwindcss": "^2.2.19",
+		"@types/react": "17.0.36",
+		"autoprefixer": "^10.4.0",
+		"eslint-config-next": "12.0.4",
+		"npm-check-updates": "^12.0.2"
 	}
 }
