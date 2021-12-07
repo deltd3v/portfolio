@@ -1,0 +1,10 @@
+$themeClrPrimary: #0f62fe;
+$themeClrSecondary: #83ffee;
+
+$commonBorderRadius: 5px;
+
+:root {
+	--primary: #{$themeClrPrimary};
+	--secondary: #{$themeClrSecondary};
+	--common-border-radius: #{$commonBorderRadius};
+}

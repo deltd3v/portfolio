@@ -1,0 +1,66 @@
+@use 'sass:math';
+.bg-grad,
+.hover-bg-grad:hover,
+.focus-bg-grad:focus {
+	background-image: linear-gradient(
+		96deg,
+		$themeClrSecondary,
+		$themeClrPrimary
+	);
+}
+.bg-primary,
+.hover-bg-primary:hover,
+.hover-bg-primary:focus {
+	background-color: $themeClrPrimary;
+}
+
+.bg-secondary,
+.hover-bg-secondary:hover,
+.hover-bg-primary:focus {
+	background-color: $themeClrSecondary;
+}
+.text-grad,
+.hover-text-grad:hover,
+.focus-text-grad:focus {
+	font-weight: bolder;
+	background-image: linear-gradient(
+		96deg,
+		$themeClrPrimary,
+		$themeClrSecondary
+	);
+	background-size: cover;
+	background-clip: text;
+	color: transparent;
+
+	/*    disable text highlighting */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+	supported by Chrome, Edge, Opera and Firefox */
+}
+
+.br-primary,
+.hover-br-primary:hover,
+.focus-br-primary:focus {
+	border: $commonBorderRadius / 2 solid $themeClrPrimary;
+}
+
+.br-secondary,
+.hover-br-secondary:hover,
+.focus-br-secondary:focus {
+	border: $commonBorderRadius / 2 solid $themeClrSecondary;
+}
+*:focus {
+	border: $commonBorderRadius solid;
+	border-image-slice: 1;
+	border-width: 5px;
+
+	border-image-source: linear-gradient(
+		96deg,
+		$themeClrSecondary,
+		$themeClrPrimary
+	);
+}
