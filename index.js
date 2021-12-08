@@ -48,4 +48,4 @@ els.forEach((el) => {
 })
 
 // tippyJS: TOOL TIPSSSSS FOR DEM SKILLLzzz BoY !!
-tippy('[data-tippy-content]', { trigger: 'click' })
+tippy('[data-tippy-content]', { trigger: 'click' ,theme:'light-border' })
