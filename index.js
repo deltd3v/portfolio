@@ -46,3 +46,6 @@ let els = document.querySelectorAll('.age')
 els.forEach((el) => {
 	el.textContent = `${+(new Date().getFullYear() - dob)}`
 })
+
+// tippyJS: TOOL TIPSSSSS FOR DEM SKILLLzzz BoY !!
+tippy('[data-tippy-content]', { trigger: 'click' })

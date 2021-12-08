@@ -73,6 +73,11 @@
 			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
 			rel="stylesheet"
 		/>
+		<!-- Tippy ToolTips -->
+		<link
+  rel="stylesheet"
+  href="https://unpkg.com/tippy.js@6/animations/scale.css"
+/>
 	</head>
 	<body>
 		<header class="header">
@@ -321,50 +326,57 @@
 						<h3 class="about__content-title">My Skills</h3>
 						<div class="skills">
 							<div
-								title="I'll make sure your sites look good on most devices 😎"
+							id="skill-responsive-design"
+								data-tippy-content="I'll make sure your sites look good on most devices 😎"
 								style="cursor: pointer"
 								class="skills__skill"
 							>
 								Responsive design
 							</div>
 							<div
-								title="Your products need a brand, a brand that let's people know you mean business. A good logo, theme, typography and content goes along way to improve your image."
+							id="skill-design-system"
+								data-tippy-content="Your products need a brand, a brand that let's people know you mean business. A good logo, theme, typography and content goes along way to improve your image."
 								style="cursor: pointer"
 								class="skills__skill"
 							>
 								Design Systems
 							</div>
 							<div
-								title="I'll make sure everything works fine on your site and nothing breaks or behaves abnormally"
+							id="skill-testing"
+								data-tippy-content="I'll make sure everything works fine on your site and nothing breaks or behaves abnormally"
 								style="cursor: pointer"
 								class="skills__skill"
 							>
 								Testing
 							</div>
 							<div
+							id="skill-seo-sec"
 								style="cursor: pointer"
 								class="skills__skill"
-								title="I will make sure your site is found by internet traffic, ranked well by search engines. I will also fix security vulnerabilities to raise your client's trust"
+								data-tippy-content="I will make sure your site is found by internet traffic, ranked well by search engines. I will also fix security vulnerabilities to raise your client's trust"
 							>
 								SEO & Security
 							</div>
 							<div
+							id="skill-aLLy"
 								style="cursor: pointer"
 								class="skills__skill"
-								title="Accessibility is the love language we show to those with disabilities, i'll make sure they get it 💕"
+								data-tippy-content="Accessibility is the love language we show to those with disabilities, i'll make sure they get it 💕"
 							>
 								aLLy
 							</div>
 							<div
+							id="skill-i18n"
 								style="cursor: pointer"
 								class="skills__skill"
-								title="language localization"
+								data-tippy-content="language localization"
 							>
 								i18n
 							</div>
 							<div
+							id="skill-wpo"
 								style="cursor: pointer"
-								title="It's very important for your site to load fast & keep its users satisfied."
+								data-tippy-content="It's very important for your site to load fast & keep its users satisfied."
 								class="skills__skill"
 							>
 								Web Performance Optimizations WPO
@@ -379,14 +391,14 @@
 								Github Actions
 							</div>
 							<div
-								title="HTML & MD: Are the skeleton, SASS: IS THE SKIN & MAKE UP, TS: Creates the behaviors. I can code the design system's component library using these languages"
+								data-tippy-content="HTML & MD: Are the skeleton, SASS: IS THE SKIN & MAKE UP, TS: Creates the behaviors. I can code the design system's component library using these languages"
 								style="cursor: pointer"
 								class="skills__skill"
 							>
 								HTML, MD, SASS, TS
 							</div>
 							<div
-								title="I am most productive using this CSS framework"
+								data-tippy-content="I am most productive using this CSS framework"
 								style="cursor: pointer"
 								class="skills__skill"
 							>
@@ -395,21 +407,21 @@
 							<div
 								style="cursor: pointer"
 								class="skills__skill"
-								title="i am most productive with this JS framework when programming static & dynamic sites using this JS framework"
+								data-tippy-content="i am most productive with this JS framework when programming static & dynamic sites using this JS framework"
 							>
 								NextJS
 							</div>
 							<div
 								style="cursor: pointer"
 								class="skills__skill"
-								title="I am most productive when using a schema-less design to save my data and read the data without making loooong queries"
+								data-tippy-content="I am most productive when using a schema-less design to save my data and read the data without making loooong queries"
 							>
 								FireBase
 							</div>
 							<div
 								style="cursor: pointer"
 								class="skills__skill"
-								title="My CI/CD pipelines always output docker images for my versioned programmes being run by hooks in GCP"
+								data-tippy-content="My CI/CD pipelines always output docker images for my versioned programmes being run by hooks in GCP"
 							>
 								Docker
 							</div>
@@ -417,7 +429,7 @@
 						<h3 class="about__content-title">I am learning</h3>
 						<div style="cursor: pointer" class="skills">
 							<div
-								title="why ? cause i am an ambitious person"
+								data-tippy-content="why ? cause i am an ambitious person"
 								style="cursor: pointer"
 								class="skills__skill"
 							>
@@ -668,7 +680,10 @@
 			</div>
 		</footer>
 
-		<script src="./index.js"></script>
+
+		<!-- Tippy Production -->
+		<script src="https://unpkg.com/@popperjs/core@2"></script>
+		<script src="https://unpkg.com/tippy.js@6"></script>
 		<!-- TODO: uncomment in production -->
 		<!-- CookieBot(free):  https://www.cookiebot.com/ -->
 		<!-- <script
@@ -693,5 +708,7 @@
 		<script>
 			feather.replace()
 		</script>
+		<script src="./index.js"></script>
+
 	</body>
 </html>
