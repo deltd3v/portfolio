@@ -1,11 +1,12 @@
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
+@import 'abstracts/grad';
+@import 'abstracts/utilities';
+@import 'abstracts/modalImage';
+
+@import 'animations/scroller';
 
 @import 'base/base';
-
-@import 'abstracts/utilities';
-@import 'abstracts/grad';
-@import 'animations/scroller';
 
 @import 'pages/home';
 @import 'pages/project-case-study';

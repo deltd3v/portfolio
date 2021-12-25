@@ -31,9 +31,8 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
 }
 
 //  update logo link href
-const headerLogoConatiner = document.querySelector('.header__logo-container')
-
-headerLogoConatiner.addEventListener('click', () => {
+const headerLogoSub = document.querySelector('.header__logo-sub')
+headerLogoSub.addEventListener('click', () => {
 	location.href = 'index.html'
 })
 window.onbeforeunload = function () {
@@ -54,3 +53,33 @@ tippy('[data-tippy-content]', {
 	theme: 'light-border',
 	allowHTML: true,
 })
+
+// Modal Image:
+// Images should become bigger in a modal element when they are clicked on
+// Source: https://www.w3schools.com/howto/howto_css_modal_images.asp
+// Get the modal
+var modal = document.getElementById('myModal')
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg')
+var modalImg = document.getElementById('modalImg')
+var captionText = document.getElementById('caption')
+const $imgs = document.querySelectorAll('.trigger-modal-display')
+$imgs.forEach(($img) => {
+	$img.onclick = function () {
+		modalImg.src = $img.src
+		modal.style.display = 'block'
+		captionText.innerHTML = $img.alt
+	}
+})
+
+// Get the <span> element that closes the modal
+var modalClose = document.getElementsByClassName('close')[0]
+
+// When the user clicks on <span> (x), close the modal
+modalClose.onclick = function () {
+	modal.style.display = 'none'
+}
+modal.onclick = function () {
+	modal.style.display = 'none'
+}

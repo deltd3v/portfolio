@@ -21,89 +21,66 @@ $breakpoint arguement choices:
 
 Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only inside media queries
 */
-*,
-*::after,
-*::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: inherit;
-	font-family: inherit;
+@use 'sass:math';
+.bg-grad,
+.hover-bg-grad:hover,
+.focus-bg-grad:focus {
+	background-image: linear-gradient(96deg, #83ffee, #0f62fe);
 }
 
-html {
-	font-size: 62.5%;
-}
-@media only screen and (max-width: 75em) {
-	html {
-		font-size: 59%;
-	}
-}
-@media only screen and (max-width: 56.25em) {
-	html {
-		font-size: 56%;
-	}
-}
-@media only screen and (min-width: 112.5em) {
-	html {
-		font-size: 65%;
-	}
+.bg-primary,
+.hover-bg-primary:hover,
+.hover-bg-primary:focus {
+	background-color: #0f62fe;
 }
 
-body {
-	box-sizing: border-box;
-	position: relative;
-	line-height: 1.5;
-	font-family: sans-serif;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	scroll-behavior: smooth;
+.bg-secondary,
+.hover-bg-secondary:hover,
+.hover-bg-primary:focus {
+	background-color: #83ffee;
 }
 
-html,
-body {
-	scrollbar-width: thin;
-	scroll-behavior: smooth;
-	font-family: 'IBM Plex Sans', sans-serif;
+.text-grad,
+.hover-text-grad:hover,
+.focus-text-grad:focus {
+	font-weight: bolder;
+	background-image: linear-gradient(96deg, #0f62fe, #83ffee);
+	background-size: cover;
+	background-clip: text;
+	color: transparent;
+	/*    disable text highlighting */
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Old versions of Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently
+	supported by Chrome, Edge, Opera and Firefox */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: 'IBM Plex Serif', serif;
+.br-primary,
+.hover-br-primary:hover,
+.focus-br-primary:focus {
+	border: 2.5px solid #0f62fe;
 }
 
-label,
-a,
-button {
-	font-family: 'Exo 2', sans-serif;
+.br-secondary,
+.hover-br-secondary:hover,
+.focus-br-secondary:focus {
+	border: 2.5px solid #83ffee;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-li {
-	list-style: none;
-}
-
-input:focus,
-button:focus,
-a:focus,
-textarea:focus {
-	outline: none;
-}
-
-button {
-	border: none;
-	cursor: pointer;
-}
-
-textarea {
-	resize: none;
+*:focus {
+	border: 5px solid;
+	border-image-slice: 1;
+	border-width: 5px;
+	border-image-source: linear-gradient(96deg, #83ffee, #0f62fe);
 }
 
 .heading-primary {
@@ -268,66 +245,206 @@ textarea {
 	display: none;
 }
 
-@use 'sass:math';
-.bg-grad,
-.hover-bg-grad:hover,
-.focus-bg-grad:focus {
-	background-image: linear-gradient(96deg, #83ffee, #0f62fe);
+.trigger-modal-display {
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
-.bg-primary,
-.hover-bg-primary:hover,
-.hover-bg-primary:focus {
-	background-color: #0f62fe;
+.trigger-modal-display:hover {
+	opacity: 0.7;
 }
 
-.bg-secondary,
-.hover-bg-secondary:hover,
-.hover-bg-primary:focus {
-	background-color: #83ffee;
+/* The Modal (background) */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 10rem;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: black;
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.9);
+	/* Black w/ opacity */
 }
 
-.text-grad,
-.hover-text-grad:hover,
-.focus-text-grad:focus {
-	font-weight: bolder;
-	background-image: linear-gradient(96deg, #0f62fe, #83ffee);
-	background-size: cover;
-	background-clip: text;
-	color: transparent;
-	/*    disable text highlighting */
-	-webkit-touch-callout: none;
-	/* iOS Safari */
-	-webkit-user-select: none;
-	/* Safari */
-	-khtml-user-select: none;
-	/* Konqueror HTML */
-	-moz-user-select: none;
-	/* Old versions of Firefox */
-	-ms-user-select: none;
-	/* Internet Explorer/Edge */
-	user-select: none;
-	/* Non-prefixed version, currently
-	supported by Chrome, Edge, Opera and Firefox */
+/* Modal Content (image) */
+.modal-content {
+	margin: auto;
+	display: block;
+	max-width: 300px;
 }
 
-.br-primary,
-.hover-br-primary:hover,
-.focus-br-primary:focus {
-	border: 2.5px solid #0f62fe;
+/* Caption of Modal Image */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
 }
 
-.br-secondary,
-.hover-br-secondary:hover,
-.focus-br-secondary:focus {
-	border: 2.5px solid #83ffee;
+/* Add Animation */
+.modal-content,
+#caption {
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
 }
 
-*:focus {
-	border: 5px solid;
-	border-image-slice: 1;
-	border-width: 5px;
-	border-image-source: linear-gradient(96deg, #83ffee, #0f62fe);
+@-webkit-keyframes zoom {
+	from {
+		-webkit-transform: scale(0);
+	}
+	to {
+		-webkit-transform: scale(1);
+	}
+}
+
+@keyframes zoom {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+	.modal-content {
+		width: 100%;
+	}
+}
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+Inside media queries 1em is always 16px i.e 1em = 16px at every screen size only inside media queries
+*/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	font-family: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+	html {
+		font-size: 59%;
+	}
+}
+@media only screen and (max-width: 56.25em) {
+	html {
+		font-size: 56%;
+	}
+}
+@media only screen and (min-width: 112.5em) {
+	html {
+		font-size: 65%;
+	}
+}
+
+body {
+	box-sizing: border-box;
+	position: relative;
+	line-height: 1.5;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	scrollbar-width: thin;
+	scroll-behavior: smooth;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'IBM Plex Serif', serif;
+}
+
+label,
+a,
+button {
+	font-family: 'Exo 2', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+input:focus,
+button:focus,
+a:focus,
+textarea:focus {
+	outline: none;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+textarea {
+	resize: none;
 }
 
 .home-hero {

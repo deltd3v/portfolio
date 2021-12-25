@@ -96,14 +96,21 @@
 /> -->
 	</head>
 	<body>
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<div id="caption"></div>
+			<img class="modal-content" id="modalImg" />
+		</div>
+
 		<header class="header">
 			<div class="header__content">
 				<div class="header__logo-container">
 					<div class="header__logo-img-cont">
 						<img
-							src="/assets/jpeg/me.jpg"
-							alt="Evans Chaba Logo Image"
-							class="header__logo-img"
+							src="/assets/jpeg/profile_pic.jpg"
+							alt="A picture of Evans Chaba"
+							class="trigger-modal-display header__logo-img"
 						/>
 					</div>
 					<span class="header__logo-sub">Evans Chaba</span>
@@ -212,6 +219,7 @@
 				</div>
 			</div>
 		</header>
+
 		<section class="home-hero">
 			<div class="home-hero__content">
 				<h1 class="heading-primary">Hello World 😎</h1>
@@ -275,6 +283,7 @@
 				<div class="mouse"></div>
 			</div>
 		</section>
+
 		<section id="about" class="about sec-pad">
 			<div class="main-container">
 				<h2 class="heading heading-sec heading-sec__mb-med">
@@ -313,7 +322,7 @@
 								>
 								but decided to go back to school and learn abit more finnish. I
 								am now focused on improving my skills by participating in real
-								world projects so 
+								world projects so
 							</p>
 
 							<!-- <p class="about__content-details-para">
@@ -467,6 +476,7 @@
 				</div>
 			</div>
 		</section>
+
 		<section id="projects" class="projects sec-pad">
 			<div class="main-container">
 				<h2 class="heading heading-sec heading-sec__mb-bg">
@@ -555,6 +565,7 @@
 				</div>
 			</div>
 		</section>
+
 		<section id="contact" class="contact sec-pad dynamicBg">
 			<div class="main-container">
 				<h2 class="heading heading-sec heading-sec__mb-med">
@@ -614,6 +625,7 @@
 				</div>
 			</div>
 		</section>
+
 		<footer class="main-footer">
 			<div class="main-container">
 				<div class="main-footer__upper">
@@ -721,7 +733,6 @@
 			src="//code.tidio.co/kkufovhwurlrhhtv27o6v7xoz0xr8qv2.js"
 			async
 		></script>
-		 
 
 		<!-- feather icon cdn -->
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
